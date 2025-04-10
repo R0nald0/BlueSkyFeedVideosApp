@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:spark_desafio_tecnico/app/core/exceptions/repostory_exception.dart';
 import 'package:spark_desafio_tecnico/app/data/model/post_video.dart';
 import 'package:spark_desafio_tecnico/app/data/repository/i_post_repository.dart';
 
@@ -9,10 +10,10 @@ class HomePageController extends ChangeNotifier {
   List<PostVideo> appVideos = <PostVideo>[];
 
   bool _isLoading = false;
-  late String?  _message ;
+  String  _message ='';
 
   bool get isloading => _isLoading;
-  String? get message => _message;
+  String get message => _message;
 
   HomePageController({required IPostRepository client})
       : _repository = client,
@@ -21,9 +22,9 @@ class HomePageController extends ChangeNotifier {
   Future<void> _getFeedVideos() async {
     try {
       showLoader();
-      final videos = await _repository.getFeedVideo();
+      final videos = await _repository.getFeedPostVideo();
       appVideos.addAll(videos); 
-    } on Exception catch (e) {
+    } on RepositoryException catch (e) {
         _message = 'Erro ao buscar video';
         log('erro ao buscar dados',error: e);
     }finally{
@@ -52,6 +53,8 @@ class HomePageController extends ChangeNotifier {
     }
   }
   void clearErrorMessage() {
-    _message = null;
+    if(_message.isNotEmpty){
+      _message = '';
+    }
   }
 }

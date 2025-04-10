@@ -20,8 +20,8 @@ class _HomeState extends State<Home> {
    
     WidgetsBinding.instance.addPostFrameCallback((_) {
         listener =  () {
-       final erro  = controller.message;
-       if (erro != null && erro.isNotEmpty) {
+       final erro  = controller.message ;
+       if (erro.isNotEmpty) {
          ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(erro)));
        }
