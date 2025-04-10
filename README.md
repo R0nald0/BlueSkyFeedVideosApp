@@ -19,7 +19,7 @@ Para desenvolvimento do aplicativo foi utilizado a IA ChatGPT para criação do 
 
 ### Como Rodar 
 <p>
- Pra rodar e testar, basta ter o Flutter instalado e executar:
+ Pra rodar e testar, basta ter o Flutter instalado,clonar ou fazer um fork deste repositório e executar com:
 </p>
 
 ```
@@ -40,7 +40,9 @@ Para desenvolvimento do aplicativo foi utilizado a IA ChatGPT para criação do 
  * ChangeNotifier para Gerencimento de estado.
  * ATProto 
  * Consumo da Bluesky API via ATProto: 
-   
+
+  vesão do Flutter da 3.27.1
+  vesão do Dart da 3.6.0
   
   ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
   ![Badge em dart](http://img.shields.io/static/v1?label=LENGUAGE&message=%20DART&color=BLUEN&style=for-the-badge)
